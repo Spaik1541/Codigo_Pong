@@ -1,7 +1,7 @@
 //variáveis da Bolinha
 let xBolinha = 300;
 let yBolinha = 200;
-let diametro = 13;
+let diametro = 10;
 let raio = diametro/2;
 //velocidade da Bolinha
 let velocidadeXBolinha = 5;
@@ -32,17 +32,8 @@ let raquetada;
 let ponto;
 let trilha;
 
-
-function preload()
-{
-  trilha = loadSound("trilha.mp3");
-  ponto = loadSound("ponto.mp3");
-  raquetada = loadSound("raquetada.mp3");
-}
-
 function setup() {
   createCanvas(600, 400);
-  trilha.loop();
 }
 
 function draw() {
@@ -117,11 +108,10 @@ function verificaColisaoRaquete()
 
 function colisaoRaquetebiblioteca(x,y)
 {
-  colidiu = collideRectCircle(x,y,lRaquete,aRaquete,xBolinha,yBolinha,raio);
+  colidiu = collideRectCircle =(x,y,lRaquete,aRaquete,xBolinha,yBolinha,raio);
   if(colidiu)
   {
     velocidadeXBolinha *= -1;
-    raquetada.play();
   }
 }
 
@@ -156,11 +146,9 @@ function marcaPonto()
   if (xBolinha+raio > width)
   {
     meusPontos += 1;
-    ponto.play();
   }
   if(xBolinha-raio < 0)
   {
     pontosOponente += 1;
-    ponto.play();
   }
 }
